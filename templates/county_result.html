@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+* {
+    box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  width:100%;
+}
+.head {
+    width: 100%;
+    height: 20%;
+    padding: 10px;
+}
+.logo {   
+    width: 20%;
+    height: 100%;
+    padding: 10px;
+    /* background-color: azure; */
+    float: left;
+}
+.name { 
+    width: 60%;
+    height: 100%;
+    padding: 10px;
+    /* background-color: antiquewhite; */
+    float: left;
+    position: relative;
+    left: 15%;
+}
+.navbar {
+  overflow: hidden;
+  background-color:burlywood;
+  width: 100%;
+  height: 30%;
+  padding-left: 8%;
+}
+/* Style the navigation bar links */
+.func{
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding-top:1.5%;
+  padding-bottom:1.5%;
+  padding-left: 3%;
+  padding-right: 3%;
+  text-decoration: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+/* Change color on hover */
+.func:hover {
+  background-color: #ddd;
+  color: black;
+}
+.table{
+    text-align: center;
+    padding-top: 20px;
+    width: 100%;
+    
+}   
+.table_title{
+  font-size: 20px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+.table_data{
+  font-size: 18px;
+  margin-left: auto;
+  margin-right: auto;
+}
+canvas{
+    margin: 0 auto;
+}
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+</head>
+<!-- Connect to Chart.js for visulization -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<!-- Initial function, reset value, check catagory -->
+<body onload="initial()">
+    <div class="head">
+      <img class ="logo" src="/static/img/logo.png" />
+      <div class = "name"><h1>This is the name of product</h1></div> 
+    </div>
+
+    <div class="navbar">    
+      <a href="/"><div class = "func">Home</div></a>
+      <div class = "func" onclick="download_csv();">Download Data</div>
+      <a href="/searchCounty"><div class = "func">Search for another county</div></a>
+    </div>
+
+    <div class="main">
+      <!-- Create table for data retrived -->
+        <div class="table">
+          <div class="table_title">Search results for {{county}}, {{state}}:</div>
+          <div>
+            {% if result_list %}
+              <table class="table_data", border = "1px">
+                <th>Catagory</th>
+                <th>Variable</th>
+                <th>Year</th>
+                <th>County Data</th>
+                <th>State Data</th>
+                {% for line in result_list %}
+                <tr>
+                  <td>{{line[0]}}</td>
+                  <td>{{line[1]}}</td>
+                  <td>{{line[2]}}</td>
+                  <td>{{line[3]}}</td>
+                  <td>{{line[4]}}</td>
+                </tr>
+                {% endfor %}
+              </table>
+            {% endif %}
+          </div>
+        </div>
+        <!-- Draw visulization -->
+        <div class="canvas">
+          <canvas id="myChart1" width="1000" height="350"></canvas>
+         </div>
+         <div class="canvas">
+          <canvas id="myChart2" width="1000" height="350"></canvas>
+         </div>
+      </div>
+</body>
+</html>
+
+<script type="text/javascript">
+// Change data from python mode to json mode
+var result = {{ result_list|tojson }};
+var county = {{county|tojson }}
+var state = {{state|tojson }}
+var cata = result[0][0]
+
+function download_csv() {
+  // Add first line
+    var csv = 'Catagory,Variable,Year,State_Data,County_Data\n';
+    // Add other lines
+    result.forEach(function(row) {
+            csv += row.join(',');
+            csv += "\n";
+    });
+    // Download data
+    console.log(csv);
+    
+    var hiddenElement = document.createElement('a');
+    hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
+    hiddenElement.target = '_blank';
+    hiddenElement.download = cata + '_' + county + '_' + state + '' + '.csv';
+    hiddenElement.click();
+}
+
+// Initial function
+function initial(){
+  // check catagory type and active related function
+  if(cata == "School Enrollment"){
+    enrollment()
+  }
+}
+
+// Visulization for School Enrollment
+function enrollment(){
+    new Chart('myChart1', {
+      type: 'bar',
+      data: {
+        labels: [result[0][2],result[1][2],result[2][2],result[3][2],result[4][2]],
+        datasets: [
+          {
+            label: 'Enrolled in kindergarten',
+            data: [result[0][3],result[1][3],result[2][3],result[3][3],result[4][3]],
+            backgroundColor: '#D6E9C6' // green
+          },
+          {
+            label: 'Enrolled in nursey school or preschool',
+            data: [result[5][3],result[6][3],result[7][3],result[8][3],result[9][3]],
+            backgroundColor: '#EBCCD1' // red
+          }
+        ]
+      },
+      options: {
+        responsive: false,
+        title: {
+          display: true,
+          text: 'Number of children enrolled, in past 5 years',
+          fontSize: 20,
+        },
+        legend: {
+          position: 'right',            
+          labels:{
+            fontSize: 16
+          }
+        },
+        scales: {
+          xAxes: [{ stacked: true }],
+          yAxes: [{ stacked: true }]
+        }
+      }
+    });
+    new Chart('myChart2', {
+      type: 'line',
+      data: {
+        labels: [result[0][2],result[1][2],result[2][2],result[3][2],result[4][2]],
+        datasets: [
+          {
+            label: 'Enrolled in kindergarten',
+            data: [result[0][3],result[1][3],result[2][3],result[3][3],result[4][3]],
+            lineTension: 0,
+            borderColor: "#D6E9C6",
+            fill: false
+          },
+          {
+            label: 'Enrolled in nursey school or preschool',
+            data: [result[5][3],result[6][3],result[7][3],result[8][3],result[9][3]],
+            lineTension: 0,
+            borderColor: "#EBCCD1",
+            fill: false
+          }
+        ]
+      },
+      options: {
+        responsive: false,
+        title: {
+          display: true,
+          text: 'Number of children enrolled, in past 5 years',
+          fontSize: 20,
+        },
+        legend: {
+          position: 'right',
+          labels:{
+            fontSize: 16
+          }
+        }
+      }
+    });
+}
+</script>
+
+
