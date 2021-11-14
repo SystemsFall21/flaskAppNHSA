@@ -51,4 +51,4 @@ def contact():
 
 app.secret_key = 'some key that you will never guess'
 if __name__ == "__main__":
-	app.run()
+	app.run('127.0.0.1', 8000, debug = True)

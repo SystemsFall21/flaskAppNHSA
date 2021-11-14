@@ -1,0 +1,8 @@
+Flask==1.1.2
+Flask-Compress==1.8.0
+Jinja2==2.11.3
+numpy
+pandas
+censusdata
+datetime
+gunicorn
