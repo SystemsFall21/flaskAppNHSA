@@ -37,15 +37,15 @@ body {
     /* background-color: antiquewhite; */
     float: left;
     position: relative;
-    left: 15%;
+    left: 10%;
 }
 
 .navbar {
   overflow: hidden;
-  background-color:burlywood;
+  background-color:#204F6D;
   width: 100%;
   height: 30%;
-  padding-left: 8%;
+  padding-left: 7%;
 
 }
 
@@ -57,8 +57,8 @@ body {
   text-align: center;
   padding-top:1.5%;
   padding-bottom:1.5%;
-  padding-left: 3%;
-  padding-right: 3%;
+  padding-left: 4.5%;
+  padding-right: 4.5%;
   text-decoration: none;
   font-size: 20px;
   cursor: pointer;
@@ -72,10 +72,12 @@ body {
 }
 
 .main{
-    padding-top: 10%;
+    padding-top: 2%;
+    padding-left: 10%;
+    padding-right: 10%;
     height: 50%;
-    text-align: center;
-    font-size: 30px;
+    text-align: left;
+    font-size: 20px;
 }   
 
 </style>
@@ -85,7 +87,7 @@ body {
 <body onload="draw()">
     <div class="head">
         <img class ="logo" src="/static/img/logo.png" />
-        <div class = "name"><h1>This is the name of product</h1></div> 
+        <div class = "name"><h1>Community Needs Assessment Data Tool</h1></div> 
     </div>
 
 
@@ -94,116 +96,19 @@ body {
     </div>
 
    <div class = "main">
-       Here are info for external sources
+       <p>View the following links for more resources</p><br>
+       <p>The <a href="https://datacenter.kidscount.org/">COUNT Data Center</a> is a robust 
+        source with the following indicator categories: demographics, economic well-being, 
+        education, family and community, health, safety and risky behaviors. </p><br>
+       <p> The <a href="https://www.census.gov/programs-surveys/acs">American Community Survey</a> 
+        helps local officials, community leaders, and businesses understand the changes taking 
+        place in their communities. It is the premier source for detailed population and housing 
+        information about our nation.</p><br>
+       <p>The <a href ="https://www.communitycommons.org/">Community Commons</a>is a robust 
+        online platform that supports change-makers working to advance equitable community
+         health and well-being. Community Commons has a series of data tools and maps </p><br>
    </div>
-   <!-- <div class="canvas">
-    <canvas id="myChart1" width="1000" height="350"></canvas>
-   </div>
-   <div class="canvas">
-    <canvas id="myChart2" width="1000" height="350"></canvas>
-   </div> -->
     
 </body>
 </html>
 
-<!-- <script>
-    var xyValues = [
-      {x:50, y:7},
-      {x:60, y:8},
-      {x:70, y:8},
-      {x:80, y:9},
-      {x:90, y:9},
-      {x:100, y:9},
-      {x:110, y:10},
-      {x:120, y:11},
-      {x:130, y:14},
-      {x:140, y:14},
-      {x:150, y:15}
-    ];
-
-    var test = true;
-    
-    function draw(){
-        
-        if (test == true){
-            new Chart('myChart1', {
-                type: 'bar',
-                data: {
-                    labels: ['2015','2016','2017','2018','2019'],
-                    datasets: [
-                        {
-                            label: 'Enrolled in kindergarten',
-                            data: [67.8,98,10,28,5],
-                            backgroundColor: '#D6E9C6' // green
-                        },
-                        {
-                            label: 'Enrolled in nursey school or preschool',
-                            data: [11.4,22,12,34,56],
-                            backgroundColor: '#EBCCD1' // red
-                        }
-                    ]
-                },
-                options: {
-                    responsive: false,
-                    title: {
-                        display: true,
-                        text: 'Here the title',
-                        fontSize: 20,
-                    },
-                    legend: { 
-                        position: 'right',
-                        labels:{
-                            fontSize: 16
-                        }
-                    },
-                    
-                    scales: {
-                        xAxes: [{ stacked: true }],
-                        yAxes: [{ stacked: true }]
-                    }
-                }
-            });
-
-            new Chart('myChart2', {
-                type: 'line',
-                data: {
-                    labels: ['2015','2016','2017','2018','2019'],
-                    datasets: [
-                        {
-                            label: 'Enrolled in kindergarten',
-                            data: [67.8,98,10,28,5],
-                            borderColor: "#D6E9C6",
-                            fill: false,
-                            lineTension: 0
-                        },
-                        {
-                            label: 'Enrolled in nursey school or preschool',
-                            data: [11.4,22,12,34,56],
-                            borderColor: "#EBCCD1",
-                            fill: false,
-                            lineTension: 0
-                            
-                        }
-                    ]
-                },
-                options: {
-                    responsive: false,
-                    title: {
-                        display: true,
-                        text: 'Change in number number of children enrolled, in past 5 years',
-                        fontSize: 20,
-                    },
-                    legend: { 
-                        position: 'right',
-                        labels:{
-                            fontSize: 16
-                        }
-                    }
-                }
-            });
-        }
-    }
-</script>
-     -->
-
-    
