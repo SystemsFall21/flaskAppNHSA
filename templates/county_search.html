@@ -34,15 +34,15 @@ body {
     /* background-color: antiquewhite; */
     float: left;
     position: relative;
-    left: 15%;
+    left: 10%;
 }
 
 .navbar {
   overflow: hidden;
-  background-color:burlywood;
+  background-color:#204F6D;
   width: 100%;
   height: 30%;
-  padding-left: 8%;
+  padding-left: 7%;
 
 }
 
@@ -54,8 +54,8 @@ body {
   text-align: center;
   padding-top:1.5%;
   padding-bottom:1.5%;
-  padding-left: 3%;
-  padding-right: 3%;
+  padding-left: 4.5%;
+  padding-right: 4.5%;
   text-decoration: none;
   font-size: 20px;
   cursor: pointer;
@@ -64,8 +64,8 @@ body {
 
 /* Change color on hover */
 .func:hover {
-  background-color: #ddd;
-  color: black;
+    background-color: #ddd;
+    color: black;
 }
 
 .main{
@@ -88,18 +88,19 @@ body {
     <meta charset="UTF-8">
     <title>Search</title>
 </head>
-<body>
+<body onload="pageload()">
     <div class="head">
             <img class ="logo" src="/static/img/logo.png" />
-            <div class = "name"><h1>This is the name of product</h1></div> 
+            <div class = "name"><h1>Community Needs Assessment Data Tool</h1></div> 
     </div>
     
     <div class="navbar">
         <a href="/"><div class = "func">Home</div></a>
+        <a href="/cataList"><div class = "func">Catagory List</div></a>
     </div>
 
     <div class = "main">
-        <form action="/searchCountyAuth" method="POST" id = 'form'>
+        <form id = 'form'>
             <div class = "choose">
                 <a>Pick State</a>
                 <select name="state" id="state" onchange="GetCounty()">
@@ -121,8 +122,8 @@ body {
                 </select>
             </div>
             
-            <div class = "choose">
-                <input type="submit" value = "Submit Choices"/><br>
+            <div class="choose">
+                <button type="button" onclick="reminder()" id = "button">Search</button>
             </div>
         
         </form>
@@ -145,27 +146,30 @@ body {
          'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
           'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming')
     var state_dic = JSON.parse('{{state_dic| tojson}}');
-    var catagory_array = Array('Total population', 'School Enrollment', 'Unemployment Rate', 
-    'Unemployment, Households with Children under 7', 'Household Composition (children under 6)', 
-    'SSI, Cash Public Assistance, Food Stamps', 'Teen mothers', 
-    'Children in Foster Care', 'Educational Attainment', 'Health Insurance Coverage', 
-    'Population in Poverty by Age', 'Population Living With Disabilities', 'Race and Ethnicity',
-     'Children Under 6 Population Living With Family');
+    var catagory_array = Array('Children in Foster Care','Children Under 6 Population Living With Family', 
+    'Educational Attainment', 'Health Insurance Coverage', 'Household Composition (children under 6)', 
+    'Population Living With Disabilities', 'Population in Poverty by Age', 'Race and Ethnicity', 
+    'SSI, Cash Public Assistance, Food Stamps', 'School Enrollment', 'Teen mothers', 'Total population',
+    'Unemployment Rate', 'Unemployment, Households with Children under 6');
     
     function GetState()
     {
         objstate.options.length = 0;
-        objstate.options.add(new Option('',''));
+        objstate.options.add(new Option('Please select a state','Please select a state'));
         for(i = 0; i<state_array.length; i++){
             objstate.options.add(new Option(state_array[i], state_array[i]));
         }
     }
-
+    function SetCounty()
+    {
+        objcounty.options.length = 0;
+        objcounty.options.add(new Option('Please select a county','Please select a county'));
+    }
     function GetCounty()
     {
         var selectedIndex = objstate.selectedIndex;
-        var text = objstate.options[selectedIndex].text
-        var county_array = state_dic[text][1]
+        var text = objstate.options[selectedIndex].text;
+        var county_array = state_dic[text][1];
 
         objcounty.options.length = 0;
 
@@ -177,12 +181,40 @@ body {
     function GetCatagory()
     {
         objcatagory.options.length = 0;
-        objcatagory.options.add(new Option('',''));
+        objcatagory.options.add(new Option('Please select a catagory','Please select a catagory'));
         for(i = 0; i<catagory_array.length; i++){
             objcatagory.options.add(new Option(catagory_array[i], catagory_array[i]));
         }
     }
 
-    window.onload=GetState();
-    window.onload=GetCatagory();
+    function reminder(){
+        var state_select = document.getElementById("state");
+        var county_select = document.getElementById("county");
+        var cata_select = document.getElementById("catagory");
+        if (state_select.options[state_select.selectedIndex].text == "Please select a state"){
+            alert("Please fill a state");
+        }
+        else{
+            if (county_select.options[county_select.selectedIndex].text == "Please select a county"){
+                alert("Please fill a county");
+            }
+            else{
+                if (cata_select.options[cata_select.selectedIndex].text == "Please select a catagory"){
+                    alert("Please fill a catagory");
+                }
+                else{ 
+                    alert("Searching may take few minutes, please be patient");
+                    document.getElementById('button').type = "submit";
+                    document.getElementById('form').action = "/searchCountyAuth";
+                    document.getElementById('form').method = "POST";
+                }
+            }
+        }   
+    }
+    function pageload(){
+        window.onload=GetState();
+        window.onload=GetCatagory();
+        window.onload=SetCounty();
+    }
+    
 </script>

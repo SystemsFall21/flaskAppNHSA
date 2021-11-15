@@ -31,10 +31,6 @@ def searchCountyAuth():
 
   return render_template('county_result.html', result_list = result_list, state = state, county = county)
 
-@app.route('/searchState', methods=['GET','POST'])
-def searchState():
-  return
-
 @app.route('/cataList',methods =['GET','POST'])
 def cataList():
   return render_template('cataList.html', var_data = var_data)
@@ -47,7 +43,9 @@ def external():
 def contact():
   return render_template('contact.html')
 
-
+@app.route('/myData')
+def myData():
+  return render_template('my_data.html')
 
 app.secret_key = 'some key that you will never guess'
 if __name__ == "__main__":
