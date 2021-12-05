@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Weclome to /tool name/</title>
+<title>Category List</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -41,6 +41,12 @@ body {
     left: 10%;
 }
 
+.info { 
+    width: 100%;
+    height: 100%;
+    padding-left: 5%;
+}
+
 .navbar {
   overflow: hidden;
   background-color:#204F6D;
@@ -64,6 +70,13 @@ body {
   font-size: 20px;
   cursor:pointer;
 }
+.download{
+  cursor:pointer;
+  color: darkblue;
+  font-size: 20px;
+  font-weight: bold;
+  width: 30%;
+}
 
 .space{
   float: left;
@@ -84,11 +97,15 @@ body {
   background-color: #ddd;
   color: black;
 }
+.download:hover {
+  text-decoration: underline;
+}
 
 .main{
     text-align: left;
     padding-top: 10px;
-    width: 100%;
+    width: 95%;
+    padding-left: 5%;
     font-size: 15px;
 }   
 
@@ -106,12 +123,22 @@ body {
 
     <div class="navbar">
         <a href="/"><div class = "func">Home</div></a>
-        <a href="/searchCounty"><div class = "func">Search Data</div></a>
-        <div class = "space">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</div>
-        <div class = "func" onclick="download_csv();">Download Data</div>
+        <a href="/searchCounty"><div class = "func">Search Existing Data</div></a>
     </div>
 
-   <div class = "main">
+    <div class = "info">
+        <p class = "download" onclick="download_csv();"> --> Download category_list.csv <--</p>
+        <p>Data source: </p>
+        <p>U.S. census data in ecent five years. 2020 data will be updated once published</p>
+        <p>1. U.S. Census Bureau. (2016). 2011-2015 American Community Survey 5-year estimates.</p>
+        <p>2. U.S. Census Bureau. (2017). 2012-2016 American Community Survey 5-year estimates.</p>
+        <p>3. U.S. Census Bureau. (2018). 2013-2017 American Community Survey 5-year estimates.</p>
+        <p>4. U.S. Census Bureau. (2019). 2014-2018 American Community Survey 5-year estimates</p>
+        <p>5. U.S. Census Bureau. (2020). 2015-2019 American Community Survey 5-year estimates.</p>
+        <p>Retrieved using Census API ('https://api.census.gov/data/')</p>
+    </div>
+
+    <div class = "main">
        {% if var_data %}
         <table border = "1px">
         <th>Catagory</th>
@@ -125,8 +152,8 @@ body {
         </tr>
         {% endfor %}
         </table>
-    {% endif %}
-   </div>
+        {% endif %}
+    </div>
     
 </body>
 </html>
@@ -146,7 +173,7 @@ body {
         var hiddenElement = document.createElement('a');
         hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
         hiddenElement.target = '_blank';
-        hiddenElement.download = 'catagory_list.csv';
+        hiddenElement.download = 'category_list.csv';
         hiddenElement.click();
     }
     
