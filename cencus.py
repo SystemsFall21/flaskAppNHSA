@@ -29,6 +29,7 @@ def cencus_state(state_fip,var_code,type,year):
             [var_code,],tabletype=type)[var_code])
 
 def get_cencus(state,county,catagory):
+    print(state,county,catagory)
     result = []
     state_fip = state_dic[state][0][0]
     county_fip = county_dic[county][0][0]
@@ -37,6 +38,7 @@ def get_cencus(state,county,catagory):
     for i in range(len(var_code)):
         type = tabletypes[var_code[i][0]]
         for year in year_list:
+            print('here')
             temp = []
             temp.append(catagory)
             temp.append(var_name[i])
@@ -44,7 +46,6 @@ def get_cencus(state,county,catagory):
             temp.append(cencus_county(state_fip,county_fip,var_code[i],type,year))
             temp.append(cencus_state(state_fip,var_code[i],type,year))
             result.append(temp)
-    print(result)
     return result
 
 #test case

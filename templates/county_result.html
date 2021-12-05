@@ -80,7 +80,7 @@ canvas{
 </style>
 <head>
     <meta charset="UTF-8">
-    <title>Search</title>
+    <title>Search Result</title>
 </head>
 <!-- Connect to Chart.js for visulization -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
@@ -126,11 +126,37 @@ canvas{
         <br>
         <!-- Draw visulization -->
         <div class="canvas">
+          <a id="download"
+          download="Image1.jpg" 
+          href=""
+          class="btn btn-primary float-right bg-flat-color-1"
+          title="Descargar Gráfico">
+          <i class="fa fa-download"></i></a>
           <canvas id="myChart1" width="1000" height="350"></canvas>
          </div>
          <div class="canvas">
+          <button onclick="">Download fig below</button>
           <canvas id="myChart2" width="1000" height="350"></canvas>
          </div>
+      </div>
+      <div class = "adjust">
+        <a>Put the RGB code for colors you want to use</a><br>
+        <a>It should start with # and has 6 letters or numbers</a><br>
+        <a>e.g. #CCCFFF</a><br>
+        <a>color #1</a>
+        <input type="text" id = "color1"><br>
+        <a>color #2</a>
+        <input type="text" id = "color2"><br>
+        <a>color #3</a>
+        <input type="text" id = "color3"><br>
+        <a>color #4</a>
+        <input type="text" id = "color4"><br>
+        <a>color #5</a>
+        <input type="text" id = "color5"><br>
+        <a>color #6</a>
+        <input type="text" id = "color6"><br>
+        <a>color #7</a>
+        <input type="text" id = "color7"><br>
       </div>
 </body>
 </html>
@@ -138,9 +164,10 @@ canvas{
 <script type="text/javascript">
 // Change data from python mode to json mode
 var result = {{ result_list|tojson }};
-var county = {{county|tojson }}
-var state = {{state|tojson }}
-var cata = result[0][0]
+var county = {{county|tojson }};
+var state = {{state|tojson }};
+var cata = result[0][0];
+var color_pool = Array("#d94e53","#AADBD7","#F2D579","#529141", "#A66093","#5a5a5a");
 
 function download_csv() {
   // Add first line
@@ -191,7 +218,7 @@ function type1(title1, title2){
           {
             label: 'County data',
             data: [result[0][3],result[1][3],result[2][3],result[3][3],result[4][3]],
-            backgroundColor: '#D6E9C6' // green
+            backgroundColor: color_pool[0] // green
           }
         ]
       },
@@ -219,7 +246,7 @@ function type1(title1, title2){
             label: 'County data',
             lineTension: 0,
             data: [result[0][3],result[1][3],result[2][3],result[3][3],result[4][3]],
-            borderColor: '#D6E9C6', // green
+            borderColor: color_pool[0], // green
             fill:false
           },
 
@@ -252,37 +279,37 @@ function education(){
           {
             label: 'Less than 9th grade',
             data: [result[0][3],result[1][3],result[2][3],result[3][3],result[4][3]],
-            backgroundColor: '#FFCC99' // green
+            backgroundColor: color_pool[0] // green
           },
           {
             label: '9th - 12th grade, no diploma',
             data: [result[5][3],result[6][3],result[7][3],result[8][3],result[9][3]],
-            backgroundColor: '#D6E9C6' 
+            backgroundColor: color_pool[1] 
           },
           {
             label: 'High school graduate',
             data: [result[10][3],result[11][3],result[12][3],result[13][3],result[14][3]],
-            backgroundColor: '#CCFFFF'
+            backgroundColor: color_pool[2]
           },
           {
             label: 'Some college, no degree',
             data: [result[15][3],result[16][3],result[17][3],result[18][3],result[19][3]],
-            backgroundColor: '#CCE5FF' // red
+            backgroundColor: color_pool[3]
           },
           {
             label: 'Associate\'s degree',
             data: [result[20][3],result[21][3],result[22][3],result[23][3],result[24][3]],
-            backgroundColor: '#CCCCFF' // red
+            backgroundColor: color_pool[4]
           },
           {
             label: 'Bachelor\'s degree',
             data: [result[25][3],result[26][3],result[27][3],result[28][3],result[29][3]],
-            backgroundColor: '#E5CCFF' // red
+            backgroundColor: color_pool[5]
           },
           {
             label: 'Graduate or professional degree',
             data: [result[30][3],result[31][3],result[32][3],result[33][3],result[34][3]],
-            backgroundColor: '#FFCCE5' // red
+            backgroundColor: color_pool[6]
           }
         ]
       },
@@ -315,49 +342,49 @@ function education(){
             lineTension: 0,
             fill:false,
             data: [result[0][3],result[1][3],result[2][3],result[3][3],result[4][3]],
-            borderColor: '#FFCC99' // green
+            borderColor: color_pool[0]
           },
           {
             label: '9th - 12th grade, no diploma',
             lineTension: 0,
             fill:false,
             data: [result[5][3],result[6][3],result[7][3],result[8][3],result[9][3]],
-            borderColor: '#D6E9C6' 
+            borderColor: color_pool[1]
           },
           {
             label: 'High school graduate',
             lineTension: 0,
             fill:false,
             data: [result[10][3],result[11][3],result[12][3],result[13][3],result[14][3]],
-            borderColor: '#CCFFFF'
+            borderColor: color_pool[2]
           },
           {
             label: 'Some college, no degree',
             lineTension: 0,
             fill:false,
             data: [result[15][3],result[16][3],result[17][3],result[18][3],result[19][3]],
-            borderColor: '#CCE5FF' // red
+            borderColor: color_pool[3]
           },
           {
             label: 'Associate\'s degree',
             lineTension: 0,
             fill:false,
             data: [result[20][3],result[21][3],result[22][3],result[23][3],result[24][3]],
-            borderColor: '#CCCCFF' // red
+            borderColor: color_pool[3]
           },
           {
             label: 'Bachelor\'s degree',
             lineTension: 0,
             fill:false,
             data: [result[25][3],result[26][3],result[27][3],result[28][3],result[29][3]],
-            borderColor: '#E5CCFF' // red
+            borderColor: color_pool[4]
           },
           {
             label: 'Graduate or professional degree',
             lineTension: 0,
             fill:false,
             data: [result[30][3],result[31][3],result[32][3],result[33][3],result[34][3]],
-            borderColor: '#FFCCE5' // red
+            borderColor: color_pool[6]
           }
         ]
       },
@@ -551,6 +578,26 @@ function enrollment(){
       }
     });
 }
+
+function download1(){
+  Chart.helpers.each(Chart.instances, function(instance){
+    console.log(instance.toBase64Image());
+  });
+}
+
+function download2(){
+  var image = myChart.toBase64Image();
+  console.log(image);
+}
+
+document.getElementById("download").addEventListener('click', function(){
+  /*Get image of canvas element*/
+  var url_base64jp = document.getElementById("myChart1").toDataURL("image/jpg");
+  /*get download button (tag: <a></a>) */
+  var a =  document.getElementById("download");
+  /*insert chart image url to download button (tag: <a></a>) */
+  a.href = url_base64jp;
+});
 </script>
 
 

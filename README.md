@@ -1,6 +1,21 @@
-Here is the first version using flask
-Functions are incompelete now 
+Update on 12.5
 
+Adding data resources on category list page
+
+Excel templates now are able to download on Visulize My Own Data Page
+
+Modify names on navibars
+
+Modify page title shows on tabs
+
+Change the layout on welcome page
+
+Todo:
+1. Debug color function on research result page
+2. Finalize visul functions for all variables
+3. Edit the feedback page
+
+------------------------     ----------------------------
 Update on 11.14
 
 Fill content on front-page, additional resources, contact
@@ -17,3 +32,9 @@ Todo:
 
 Download function for visulization
 Excel Template for download
+
+Initial
+
+Here is the first version using flask
+Functions are incompelete now 
+

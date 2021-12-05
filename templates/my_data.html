@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Weclome to /tool name/</title>
+<title>Visulize my own data</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -48,7 +48,13 @@ body {
   padding-left: 7%;
 
 }
-
+.download{
+  cursor:pointer;
+  color: darkblue;
+  font-size: 22px;
+  font-weight: bold;
+  width: 30%;
+}
 /* Style the navigation bar links */
 .func{
   float: left;
@@ -72,7 +78,7 @@ body {
 }
 
 .main{
-    padding-top: 10%;
+    padding-top: 5%;
     height: 50%;
     text-align: center;
     font-size: 30px;
@@ -94,7 +100,9 @@ body {
     </div>
 
    <div class = "main">
-       Use my data function is under construction
+       <a class = 'download' href = "/download_pie">Download Excel Template for Pie Plot</a><br><br>
+       <a class = 'download' href = "/download_one_var">Download Excel Template for One Variable Plot</a><br><br>
+       <a class = 'download' href = "/download_two_var">Download Excel Template for Two Variables Plot</a><br>
    </div>
     
 </body>

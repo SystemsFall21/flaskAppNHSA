@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session, url_for, redirect, flash, Response
+from flask import Flask, render_template, request, send_file
 from datetime import date
 from dateutil.relativedelta import relativedelta
 import random
@@ -46,6 +46,18 @@ def contact():
 @app.route('/myData')
 def myData():
   return render_template('my_data.html')
+
+@app.route('/download_pie')
+def download_pie():
+  return send_file("pie_template.xlsx", attachment_filename="pie_template.xlsx", as_attachment=True)
+
+@app.route('/download_one_var')
+def download_one_var():
+  return send_file("one_variable_template.xlsx", attachment_filename="one_variable_template.xlsx", as_attachment=True)
+
+@app.route('/download_two_var')
+def download_two_var():
+  return send_file("two_variable_template.xlsx", attachment_filename="two_variable_template.xlsx", as_attachment=True)
 
 app.secret_key = 'some key that you will never guess'
 if __name__ == "__main__":

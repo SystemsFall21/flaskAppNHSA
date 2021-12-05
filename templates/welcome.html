@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Weclome to /tool name/</title>
+<title>Weclome</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -46,8 +46,15 @@ body {
   background-color: #204F6D;
   width: 100%;
   height: 30%;
-  padding-left: 7%;
+  padding-left: 6%;
 
+}
+
+.link {
+  background-color: #204F6D;
+  color: white;
+  font-size: 22px;
+  text-decoration: none;
 }
 
 /* Style the navigation bar links */
@@ -58,8 +65,8 @@ body {
   text-align: center;
   padding-top:1.5%;
   padding-bottom:1.5%;
-  padding-left: 4.5%;
-  padding-right: 4.5%;
+  padding-left: 3.5%;
+  padding-right: 3.5%;
   text-decoration: none;
   font-size: 20px;
   cursor: pointer;
@@ -92,9 +99,9 @@ body {
     </div>
 
     <div class="navbar">
-        <a href="/searchCounty"><div class = "func">Search Data</div></a>
-        <a href="/cataList"><div class = "func">Catagory List</div></a>
-        <a href="/myData"><div class = "func">Use My Data</div></a>
+        <a href="/searchCounty"><div class = "func">Search Existing Data</div></a>
+        <a href="/cataList"><div class = "func">Category List</div></a>
+        <a href="/myData"><div class = "func">Visualize My Own Data</div></a>
         <a href="/external"><div class = "func">Further resources</div></a>
         <a href="/contact"><div class = "func">Contact Us</div></a>
     </div>
@@ -107,19 +114,18 @@ body {
     <p>This site was developed by Carnegie Mellon University graduate students in partnership with 
       the National Head Start Association.</p>
         
-    <p>Use the <a href="/searchCounty">SEARCH DATA</a> tab to find data specific to your community. Select your state, then county, 
+    <p>Use the <a class = "link" href="/searchCounty">SEARCH EXISTING DATA</a> tab to find data specific to your community. Select your state, then county, 
       and the type of data you’re interested in.</p>
         
-    <p>Use the <a href="/cataList">CATAGORY LIST</a> tab to find a list of data provided in this web portal.</p>
+    <p>Use the <a class = "link" href="/cataList">CATAGORY LIST</a> tab to find a list of data provided in this web portal.</p>
         
-    <p>Use the <a href="/myData">USE MY DATA</a> tab to find a template to visualize your own data. Download the data 
-      template, paste your community’s data into the template, then re-upload it to the tool. 
-      The CNA toolkit can create pleasing visualizations with data from your community. </p>
+    <p>Use the <a class = "link" href="/myData">VISUALIZE MY OWN DATA</a> tab to find a template to visualize your own data. Download the data 
+      template, paste your community’s data into the template, then graphs will be created automatically </p>
     
-    <p>The <a href="/external">FURTHER RESOURCES</a> tab has guidance on CNA best practices, links to other reliable data 
+    <p>The <a class = "link" href="/external">FURTHER RESOURCES</a> tab has guidance on CNA best practices, links to other reliable data 
       sources, and suggestions on how to use your data for planning. </p>
         
-    <p>Finally, the <a href="/contact">CONTACT US</a> page has information about this project, plus 
+    <p>Finally, the <a class = "link" href="/contact">CONTACT US</a> page has information about this project, plus 
       information on where to send questions and feedback regarding this tool. </p>
    </div>
     
