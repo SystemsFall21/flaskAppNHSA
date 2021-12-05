@@ -4,7 +4,6 @@ from dateutil.relativedelta import relativedelta
 import random
 import preload_data
 import cencus
-from openpyxl import load_workbook
 
 #dictionary, key = state name, value = [[fip],[coynty list]]
 #dictionary, key = county name, value = [[fip],[location]]
