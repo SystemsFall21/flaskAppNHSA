@@ -1,3 +1,9 @@
+Update on 12.7 4:20 pm
+
+Fixed the bug when searching Educational Attainment. The var code for this category is updated in 2019, and the new code is put in the last columns of census_vars.csv
+
+------------------------     ----------------------------
+
 Update on 12.7 3:40am
 
 Full functions of changing color, downloading csv data/charts, changing color are realized on:

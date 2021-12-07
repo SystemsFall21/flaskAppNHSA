@@ -11,7 +11,7 @@ year_list = list(range(year-6,year-1))
 tabletypes = {'B':"detail",'S':"subject",'D':"profile",'C':"cprofile" }
 
 state_dic,county_dic = preload_data.preload_county_data()
-#dictionary, key = var catagory, value = [[name],[code],[description]]
+#dictionary, key = var catagory, value = [[name],[code],[description],[new code]]
 var_info,var_data = preload_data.preload_var()
 
 #list of varible infos
@@ -43,6 +43,7 @@ def get_cencus(state,county,catagory):
     state_fip = state_dic[state][0][0]
     county_fip = county_dic[county][0][0]
     var_code = var_info[catagory][1]
+    var_code_new = var_info[catagory][3]
     var_name = var_info[catagory][0]
     # print(state_fip)
     # print(county_fip)
@@ -56,10 +57,17 @@ def get_cencus(state,county,catagory):
             temp.append(catagory)
             temp.append(var_name[i])
             temp.append(year)
-            temp.append(cencus_county(state_fip,county_fip,var_code[i],type,year))
-            # print('here')
-            temp.append(cencus_state(state_fip,var_code[i],type,year))
-            result.append(temp)
+            if year < 2019:
+                temp.append(cencus_county(state_fip,county_fip,var_code[i],type,year))
+                # print('here')
+                temp.append(cencus_state(state_fip,var_code[i],type,year))
+                result.append(temp)
+            else:
+                temp.append(cencus_county(state_fip,county_fip,var_code_new[i],type,year))
+                # print('here')
+                temp.append(cencus_state(state_fip,var_code_new[i],type,year))
+                result.append(temp)
+
     return result
 
 #test case

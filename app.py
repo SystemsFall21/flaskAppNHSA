@@ -8,7 +8,7 @@ import cencus
 #dictionary, key = state name, value = [[fip],[coynty list]]
 #dictionary, key = county name, value = [[fip],[location]]
 state_dic,county_dic = preload_data.preload_county_data()
-#dictionary, key = var catagory, value = [[name],[code],[description]]
+#dictionary, key = var catagory, value = [[name],[code],[description],[new code]]
 var_info,var_data = preload_data.preload_var()
 
 app = Flask(__name__)
