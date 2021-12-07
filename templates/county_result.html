@@ -73,9 +73,18 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+.download{
+  cursor:pointer;
+  color: darkblue;
+  font-size: 20px;
+  font-weight: bold;
+  width: 30%;
+}
+
 canvas{
     margin: 0 auto;
 }
+
 
 </style>
 <head>
@@ -84,27 +93,28 @@ canvas{
 </head>
 <!-- Connect to Chart.js for visulization -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-<!-- Initial function, reset value, check catagory -->
+<!-- Initial function, reset value, check category -->
 <body onload="initial()">
     <div class="head">
-      <img class ="logo" src="/static/img/logo.png" />
+      <img class ="logo" src="/static/img/logo.png"/>
       <div class = "name"><h1>Community Needs Assessment Data Tool</h1></div> 
     </div>
 
     <div class="navbar">    
       <a href="/"><div class = "func">Home</div></a>
-      <div class = "func" onclick="download_csv();">Download Data</div>
       <a href="/searchCounty"><div class = "func">Back to Search Page</div></a>
     </div>
 
     <div class="main">
+
+      <p class = "download" onclick="download_csv();"> --> Download the Data in csv form <--</p>
       <!-- Create table for data retrived -->
         <div class="table">
           <div class="table_title">Search results for {{county}}, {{state}}:</div>
           <div>
             {% if result_list %}
               <table class="table_data", border = "1px">
-                <th>Catagory</th>
+                <th>Category</th>
                 <th>Variable</th>
                 <th>Year</th>
                 <th>County Data</th>
@@ -126,19 +136,16 @@ canvas{
         <br>
         <!-- Draw visulization -->
         <div class="canvas">
-          <a id="download"
-          download="Image1.jpg" 
-          href=""
-          class="btn btn-primary float-right bg-flat-color-1"
-          title="Descargar Gráfico">
-          <i class="fa fa-download"></i></a>
+          <p class = "download" id = "download1"> --> Download the Figure Below<--</p>
           <canvas id="myChart1" width="1000" height="350"></canvas>
+
          </div>
          <div class="canvas">
-          <button onclick="">Download fig below</button>
+          <p class = "download" id = "download2"> --> Download the Figure Below<--</p>
           <canvas id="myChart2" width="1000" height="350"></canvas>
          </div>
       </div>
+      
       <div class = "adjust">
         <a>Put the RGB code for colors you want to use</a><br>
         <a>It should start with # and has 6 letters or numbers</a><br>
@@ -166,12 +173,12 @@ canvas{
 var result = {{ result_list|tojson }};
 var county = {{county|tojson }};
 var state = {{state|tojson }};
-var cata = result[0][0];
+var cate = result[0][0];
 var color_pool = Array("#d94e53","#AADBD7","#F2D579","#529141", "#A66093","#5a5a5a");
 
 function download_csv() {
   // Add first line
-    var csv = 'Catagory,Variable,Year,State_Data,County_Data\n';
+    var csv = 'category,Variable,Year,State_Data,County_Data\n';
     // Add other lines
     result.forEach(function(row) {
             csv += row.join(',');
@@ -179,38 +186,38 @@ function download_csv() {
     });
     // Download data
     console.log(csv);
-    
     var hiddenElement = document.createElement('a');
     hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
     hiddenElement.target = '_blank';
-    hiddenElement.download = cata + '_' + county + '_' + state + '' + '.csv';
+    hiddenElement.download = cate + '_' + county + '_' + state + '' + '.csv';
     hiddenElement.click();
 }
 
 // Initial function
 function initial(){
-  // check catagory type and active related function
-  if (cata == "Children in Foster Care"){
+  // check category type and active related function
+  if (cate == "Children in Foster Care"){
     type1("children in foster care");
   }
-  else if(cata == "Educational Attainment"){
+  else if(cate == "Educational Attainment"){
     education();
   }
-  else if (cata =="Health Insurance Coverage"){
+  else if (cate =="Health Insurance Coverage"){
     type1("Nomber of civilian noninstitutionalized population (under 19) without health insurance coverage",
     "Change in percent of civilian noninstitutionalized population (under 19) without health insurance coverage");
   }
-  else if (cata == "Household Composition (children under 6)	"){
+  else if (cate == "Household Composition (children under 6)	"){
     household();
   }
-  else if(cata == "School Enrollment"){
+  else if(cate == "School Enrollment"){
     enrollment();
   }
+
 }
 
 // Visulization for Children in Foster Care, Health insurance coverage
 function type1(title1, title2){
-  new Chart('myChart1', {
+  const myChart1 = new Chart('myChart1', {
       type: 'bar',
       data: {
         labels: [result[0][2],result[1][2],result[2][2],result[3][2],result[4][2]],
@@ -266,12 +273,21 @@ function type1(title1, title2){
           }
         }
       }
-    });
-    
+    }
+  );
+  var image = myChart1.toBase64Image();
+  console.log(image);
+  document.getElementById('btn-download').onclick = function() {
+    // Trigger the download
+    var a = document.createElement('a');
+    a.href = myChart.toBase64Image();
+    a.download = 'my_file_name.png';
+    a.click();
+  }
 }
 // Visulization for Eductaion Attaintment
 function education(){
-    new Chart('myChart1', {
+  const myChart1 = new Chart('myChart1', {
       type: 'bar',
       data: {
         labels: [result[0][2],result[1][2],result[2][2],result[3][2],result[4][2]],
@@ -332,7 +348,7 @@ function education(){
         }
       }
     });
-    new Chart('myChart2', {
+    const myChart2 = new Chart('myChart2', {
       type: 'line',
       data: {
         labels: [result[0][2],result[1][2],result[2][2],result[3][2],result[4][2]],
@@ -403,6 +419,22 @@ function education(){
         }
       }
     });
+  // var image = myChart1.toBase64Image();
+  // console.log(image);
+  document.getElementById('download1').onclick = function() {
+    // Trigger the download
+    var a = document.createElement('a');
+    a.href = myChart1.toBase64Image();
+    a.download = 'Chart1.png';
+    a.click();
+  }
+  document.getElementById('download2').onclick = function() {
+    // Trigger the download
+    var a = document.createElement('a');
+    a.href = myChart2.toBase64Image();
+    a.download = 'Chart2.png';
+    a.click();
+  }
 }
 // Visulization for Eductaion Attaintment
 function household(){
