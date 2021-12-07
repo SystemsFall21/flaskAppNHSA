@@ -1,3 +1,13 @@
+Update on 12.7 12:30pm
+
+Able to catch exceptions of data not existing in Cencus
+
+Full functions of changing color, downloading csv data/charts, changing color are realized on:
+    Eucational Attainment
+    Children in Foster
+
+------------------------     ----------------------------
+
 Update on 12.6
 
 Able to dowanload chart under category "eudctaional attainment"
