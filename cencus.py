@@ -22,7 +22,7 @@ def cencus_county(state_fip,county_fip,var_code,type,year):
         return float(censusdata.download('acs5', year, \
         censusdata.censusgeo([('state', state_fip),('county', county_fip)]),\
             [var_code,],key = 'e12de88e1f23dcdd9a802fbbb92b362a1e67c3c4',\
-                tabletype=type)[var_code])
+            tabletype=type)[var_code])
     except:
         return None
 
@@ -31,8 +31,8 @@ def cencus_state(state_fip,var_code,type,year):
     try:
         return float(censusdata.download('acs5', year, \
         censusdata.censusgeo([('state', state_fip)]),\
-            [var_code,],key = "'e12de88e1f23dcdd9a802fbbb92b362a1e67c3c4'",\
-                tabletype=type)[var_code])
+            [var_code,],key = 'e12de88e1f23dcdd9a802fbbb92b362a1e67c3c4',\
+            tabletype=type)[var_code])
     except:
         return None
     
@@ -63,7 +63,7 @@ def get_cencus(state,county,catagory):
     return result
 
 #test case
-# get_cencus('Alaska','Aleutians East Borough','Children in Foster Care')
+# print(get_cencus('Alaska','Aleutians East Borough','Children in Foster Care'))
 # get_cencus('Alaska','Aleutians East Borough','Educational Attainment')
 
 

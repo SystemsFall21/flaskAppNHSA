@@ -114,7 +114,7 @@
   .cells {
     text-align: right;
     font-size: 18px;
-    padding-right: 30%;
+    padding-right: 25%;
 
   }
   
@@ -219,12 +219,12 @@
       datasets: [
         {
           label: 'County data',
-          data: [result[0][3], result[1][3], result[2][3], result[3][3], result[4][3]],
+          data: [result[5][3]/result[0][3], result[6][3]/result[1][3], result[7][3]/result[2][3], result[8][3]/result[3][3], result[9][3]/result[4][3]],
           backgroundColor: color_pool[0] // green
         },
         {
           label: 'State data',
-          data: [result[0][4], result[1][4], result[2][4], result[3][4], result[4][4]],
+          data: [result[5][4]/result[0][4], result[6][4]/result[1][4], result[7][4]/result[2][4], result[8][4]/result[3][4], result[9][4]/result[4][4]],
           backgroundColor: color_pool[1] // green
         }
       ]
@@ -233,7 +233,7 @@
       responsive: true,
       title: {
         display: true,
-        text: "Number of children under 18 that is a foster child",
+        text: "Percent civilian noninstitutionalized population (Under 19) without health insurance",
         fontSize: 20,
       },
       scales: {
@@ -260,14 +260,14 @@
         {
           label: 'County data',
           lineTension: 0,
-          data: [result[0][3], result[1][3], result[2][3], result[3][3], result[4][3]],
+          data: [result[5][3]/result[0][3], result[6][3]/result[1][3], result[7][3]/result[2][3], result[8][3]/result[3][3], result[9][3]/result[4][3]],
           borderColor: color_pool[0], // green
           fill: false
         },
         {
           label: 'State data',
           lineTension: 0,
-          data: [result[0][4], result[1][4], result[2][4], result[3][4], result[4][4]],
+          data: [result[5][4]/result[0][4], result[6][4]/result[1][4], result[7][4]/result[2][4], result[8][4]/result[3][4], result[9][4]/result[4][4]],
           borderColor: color_pool[1], // green
           fill: false
         }
@@ -277,7 +277,7 @@
       responsive: true,
       title: {
         display: true,
-        text: "Change in number of children under 18 that is a foster child",
+        text: "Change in percent of civilian noninstitutionalized population (Under 19) without health insurance",
         fontSize: 20,
       },
       scales: {

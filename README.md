@@ -1,4 +1,18 @@
-Update on 12.7 12:30pm
+Update on 12.7 3:40am
+
+Full functions of changing color, downloading csv data/charts, changing color are realized on:
+    All categories !!!!! 
+
+Fine-tune file names, page titles
+Delete useless files
+
+Todo:
+Contact page / Google form link
+Proofread the whole tool
+
+------------------------     ----------------------------
+
+Update on 12.7 12:30am
 
 Able to catch exceptions of data not existing in Cencus
 

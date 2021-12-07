@@ -17,10 +17,6 @@ Educational Attainment,Bachelor's degree,DP02_0064E,Population with a bachelor's
 Educational Attainment,Graduate or professional degree,DP02_0065E,Population with a graduate or professional degree
 Health Insurance Coverage,Civilian noninstitutionalized population (under 19),DP03_0100E,Civilian noninstitutionalized population under 19 years
 Health Insurance Coverage,Civilian noninstitutionalized population (under 19) without health insurance coverage,DP03_0101E,Civilian noninstitutionalized population under 19 years without health insurance coverage
-Household Composition (children under 6),Households with children under 6,B23008_002E,Number of households with children under the age of 6
-Household Composition (children under 6),Living with two parents,B23008_002E,Number of households with children under the age of 7
-Household Composition (children under 6),Living with father,B23008_009E,Number of children living in a household with only the father present
-Household Composition (children under 6),Living with mother,B23008_012E,Number of children living in a household with only the mother present
 Population in Poverty by Age,Under 5,S1701_C02_003E,Population under 5 in poverty
 Population in Poverty by Age,5-17 years,S1701_C02_004E,Population between 5 and 7 years old in poverty
 Population Living With Disabilities,Children under 5 with Disabilities (total),S1810_C02_013E,Number of children under 5 with disabilities
@@ -52,4 +48,3 @@ School Enrollment,Enrolled in nursery school or preschool,DP02_0053E,Number of c
 Teen mothers,"Number of women 15 to 19 years old, per 1,000, who had a birth in the past 12 months",DP02_0041E,"Number of women 15 to 19 years old who had a birth in the past 12 months, per 1,000 15-19 year olds in the population"
 Total population,Total Population,B01003_001E,Total population
 Unemployment Rate,Total population civilian labor force unemployment rate,DP03_0009PE,Total population civilian labor force unemployment rate
-"Unemployment, Households with Children under 6",All parents in family in labor force,DP03_0014PE,
