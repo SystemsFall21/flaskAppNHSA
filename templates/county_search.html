@@ -116,9 +116,9 @@ body {
             </div>
 
             <div class = "choose">
-                <a>Pick a catagory</a>
-                <select name="catagory" id="catagory">
-                    <option>Please select a catagory</option>
+                <a>Pick a category</a>
+                <select name="category" id="category">
+                    <option>Please select a category</option>
                 </select>
             </div>
             
@@ -136,7 +136,7 @@ body {
 <script type="text/javascript">
     var objstate = document.getElementById("state");
     var objcounty = document.getElementById("county");
-    var objcatagory = document.getElementById("catagory");
+    var objcategory = document.getElementById("category");
     var state_array = Array('Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
      'Colorado', 'Connecticut', 'Delaware', 'District of Columbia', 'Florida', 'Georgia',
       'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
@@ -146,7 +146,7 @@ body {
          'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
           'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming')
     var state_dic = JSON.parse('{{state_dic| tojson}}');
-    var catagory_array = Array('Children in Foster Care','Children Under 6 Population Living With Family', 
+    var category_array = Array('Children in Foster Care','Children Under 6 Population Living With Family', 
     'Educational Attainment', 'Health Insurance Coverage', 'Household Composition (children under 6)', 
     'Population Living With Disabilities', 'Population in Poverty by Age', 'Race and Ethnicity', 
     'SSI, Cash Public Assistance, Food Stamps', 'School Enrollment', 'Teen mothers', 'Total population',
@@ -178,19 +178,19 @@ body {
         }
     }
 
-    function GetCatagory()
+    function GetCategory()
     {
-        objcatagory.options.length = 0;
-        objcatagory.options.add(new Option('Please select a catagory','Please select a catagory'));
-        for(i = 0; i<catagory_array.length; i++){
-            objcatagory.options.add(new Option(catagory_array[i], catagory_array[i]));
+        objcategory.options.length = 0;
+        objcategory.options.add(new Option('Please select a category','Please select a category'));
+        for(i = 0; i<category_array.length; i++){
+            objcategory.options.add(new Option(category_array[i], category_array[i]));
         }
     }
 
     function reminder(){
         var state_select = document.getElementById("state");
         var county_select = document.getElementById("county");
-        var cata_select = document.getElementById("catagory");
+        var cate_select = document.getElementById("category");
         if (state_select.options[state_select.selectedIndex].text == "Please select a state"){
             alert("Please fill a state");
         }
@@ -199,8 +199,8 @@ body {
                 alert("Please fill a county");
             }
             else{
-                if (cata_select.options[cata_select.selectedIndex].text == "Please select a catagory"){
-                    alert("Please fill a catagory");
+                if (cate_select.options[cate_select.selectedIndex].text == "Please select a category"){
+                    alert("Please fill a category");
                 }
                 else{ 
                     alert("Searching may take few minutes, please be patient");
@@ -213,7 +213,7 @@ body {
     }
     function pageload(){
         window.onload=GetState();
-        window.onload=GetCatagory();
+        window.onload=GetCategory();
         window.onload=SetCounty();
     }
     

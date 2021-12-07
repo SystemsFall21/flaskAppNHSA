@@ -26,14 +26,15 @@ def search():
 def searchCountyAuth():
   state = request.form.get('state')
   county = request.form.get('county')
-  catagory = request.form.get('catagory')
-  result_list = cencus.get_cencus(state,county,catagory)
-
+  category = request.form.get('category')
+  result_list = cencus.get_cencus(state,county,category)
+  # if category == "Educational Attainment":
+    # return render_template('education.html', result_list = result_list, state = state, county = county)
   return render_template('county_result.html', result_list = result_list, state = state, county = county)
 
 @app.route('/cataList',methods =['GET','POST'])
 def cataList():
-  return render_template('cataList.html', var_data = var_data)
+  return render_template('cateList.html', var_data = var_data)
 
 @app.route('/external')
 def external():

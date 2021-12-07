@@ -22,6 +22,8 @@ def preload_county_data():
         state_dic[line[0]][1].append(line[1].split(',')[0])
         #add fips and position to key county
         county_dic[line[1].split(',')[0]] = [[line[3]],line[4:]]
+
+    # print(state_dic['Alaska'])
     
     return state_dic, county_dic
 
@@ -45,3 +47,5 @@ def preload_var():
         var_info[line[0]][2].append(line[3])
     
     return var_info,var_data
+
+a,b = preload_county_data()

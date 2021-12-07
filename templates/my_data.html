@@ -30,6 +30,7 @@ body {
     float: left;
 }
 
+
 .name { 
     width: 60%;
     height: 100%;
@@ -78,12 +79,26 @@ body {
 }
 
 .main{
+    display: flex;
+    font-size: 20px;
     padding-top: 5%;
-    height: 50%;
     text-align: center;
-    font-size: 30px;
 }   
+.set {   
+    width: 100%;
+    /* padding: 10px; */
+    /* background-color: azure; */
+    float: flex;
+    flex-direction: column; 
 
+}
+.icon {   
+    width: 90%;
+    /* padding-top: 20%; */
+}
+a:link, a:visited {
+    color: blue;
+}
 
 </style>
 
@@ -99,10 +114,21 @@ body {
         <a href="/"><div class = "func">Home</div></a>
     </div>
 
-   <div class = "main">
-       <a class = 'download' href = "/download_pie">Download Excel Template for Pie Plot</a><br><br>
-       <a class = 'download' href = "/download_one_var">Download Excel Template for One Variable Plot</a><br><br>
-       <a class = 'download' href = "/download_two_var">Download Excel Template for Two Variables Plot</a><br>
+    <div class = "main">
+      <div class = "set">
+        <img class ="icon" src="/static/img/pie.png" />
+        <a class = "icon" href = "/download_pie">Download Excel Template for Pie Plot</a>
+      </div>
+      <div class = "set">
+        <img class ="icon" src="/static/img/onevar.png" />
+        <a class = "icon" href = "/download_one_var">Download Excel Template for One Variable Plot</a>
+      </div>
+      <div class = "set">
+        <img class ="icon" src="/static/img/twovars.png" /> 
+        <a class = "icon" href = "/download_two_var">Download Excel Template for Two Variables Plot</a>
+      </div>
+      <!-- <div class = "set">
+      </div>     -->
    </div>
     
 </body>

@@ -18,15 +18,22 @@ var_info,var_data = preload_data.preload_var()
 
 #return data by county level
 def cencus_county(state_fip,county_fip,var_code,type,year):
-    return float(censusdata.download('acs5', year, \
+    try:
+        return float(censusdata.download('acs5', year, \
         censusdata.censusgeo([('state', state_fip),('county', county_fip)]),\
             [var_code,],tabletype=type)[var_code])
+    except:
+        return None
 
 #return data by state level
 def cencus_state(state_fip,var_code,type,year):
-    return float(censusdata.download('acs5', year, \
+    try:
+        return float(censusdata.download('acs5', year, \
         censusdata.censusgeo([('state', state_fip)]),\
             [var_code,],tabletype=type)[var_code])
+    except:
+        return None
+    
 
 def get_cencus(state,county,catagory):
     print(state,county,catagory)
@@ -35,21 +42,27 @@ def get_cencus(state,county,catagory):
     county_fip = county_dic[county][0][0]
     var_code = var_info[catagory][1]
     var_name = var_info[catagory][0]
+    # print(state_fip)
+    # print(county_fip)
+    # print(var_code)
+    # print(var_name)
+
     for i in range(len(var_code)):
         type = tabletypes[var_code[i][0]]
         for year in year_list:
-            print('here')
             temp = []
             temp.append(catagory)
             temp.append(var_name[i])
             temp.append(year)
             temp.append(cencus_county(state_fip,county_fip,var_code[i],type,year))
+            # print('here')
             temp.append(cencus_state(state_fip,var_code[i],type,year))
             result.append(temp)
     return result
 
 #test case
-#get_cencus('Arizona','Cochise County','Educational Attainment')
+# get_cencus('Alaska','Aleutians East Borough','Children in Foster Care')
+# get_cencus('Alaska','Aleutians East Borough','Educational Attainment')
 
 
 

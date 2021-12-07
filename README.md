@@ -1,3 +1,12 @@
+Update on 12.6
+
+Able to dowanload chart under category "eudctaional attainment"
+
+Change Catagory -> Category
+
+Use my own data tab: Now have pictures to illustrate each template's content
+
+------------------------     ----------------------------
 Update on 12.5
 
 Adding data resources on category list page
