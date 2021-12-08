@@ -45,7 +45,7 @@ Race and Ethnicity,Hispanic or Latino_Two or more races,B03002_019E,Hispanic or 
 School Enrollment,Enrolled in kindergarten,DP02_0054E,Number of children over 3 enrolled in kindergarten,DP02_0054E
 School Enrollment,Enrolled in nursery school or preschool,DP02_0053E,Number of children over 3 enrolled in nursery school or preschool,DP02_0053E
 "SSI, Cash Public Assistance, Food Stamps","Family households receiving SSI, cash public assistance, or food stamps",B09010_003E,"Number of family households receiving SSI, cash public assistance, or food stamps",B09010_002E
-Teen mothers,"Number of women 15 to 19 years old, per 1,000, who had a birth in the past 12 months",DP02_0041E,"Number of women 15 to 19 years old who had a birth in the past 12 months, per 1,000 15-19 year olds in the population",DP02_0041E
+Teen mothers,"Number of women 15 to 19 years old, per 1,000, who had a birth in the past 12 months",DP02_0040E,"Number of women 15 to 19 years old who had a birth in the past 12 months, per 1,000 15-19 year olds in the population",DP02_0041E
 Total population,Total Population,B01003_001E,Total population,B01003_001E
 Unemployment Rate,Total population civilian labor force unemployment rate,DP03_0009PE,Total population civilian labor force unemployment rate,DP03_0009PE
 "Unemployment, Households with Children under 6","All parents in family in labor force, percent of households with children under 6",DP03_0015PE,Percent of households with children under 6 where all parent(s) in family are employed,DP03_0015PE
