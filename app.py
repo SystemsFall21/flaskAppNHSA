@@ -69,6 +69,10 @@ def contact():
 def myData():
   return render_template('my_data.html')
 
+@app.route('/download_cate')
+def download_cate():
+  return send_file("census_vars.csv", attachment_filename="census_vars.csv", as_attachment=True)
+
 @app.route('/download_pie')
 def download_pie():
   return send_file("pie_template.xlsx", attachment_filename="pie_template.xlsx", as_attachment=True)
