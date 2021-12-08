@@ -1,55 +1,51 @@
-﻿category,name,vars,description
-Children in Foster Care,Foster child or other unrelated child under 18 in households,S0901_C01_018E,Number of children under 18 living in households where relationship to householder is foster child or other unrelated child
-Children Under 6 Population Living With Family,Total children under 6 years,B05009_002E,Total children under 6 years old living with families or subfamilies
-Children Under 6 Population Living With Family,Living with two parents,B05009_003E,Living with two parents
-Children Under 6 Population Living With Family,Both parents native,B05009_006E,Both parents native
-Children Under 6 Population Living With Family,Both parents foreign born,B05009_007E,Both parents foreign born
-Children Under 6 Population Living With Family,One native and one foreign-born parent,B05009_010E,One native and one foreign-born parent
-Children Under 6 Population Living With Family,Living with one parent,B05009_013E,Living with one parent
-Children Under 6 Population Living With Family,Parent is native,B05009_016E,Parent is native
-Children Under 6 Population Living With Family,Parent is foreign-born,B05009_017E,Parent is foreign-born
-Educational Attainment,Less than 9th grade,DP02_0059E,Population with less than a 9th grade education
-Educational Attainment,"9th - 12th grade, no diploma",DP02_0060E,Population with between a 9th grade and 12th grade education
-Educational Attainment,High school graduate,DP02_0061E,Population with a high school diploma or GED
-Educational Attainment,"Some college, no degree",DP02_0062E,Population that completed some college
-Educational Attainment,Associate's degree,DP02_0063E,Population with an associate's degree
-Educational Attainment,Bachelor's degree,DP02_0064E,Population with a bachelor's degree
-Educational Attainment,Graduate or professional degree,DP02_0065E,Population with a graduate or professional degree
-Health Insurance Coverage,Civilian noninstitutionalized population (under 19),DP03_0100E,Civilian noninstitutionalized population under 19 years
-Health Insurance Coverage,Civilian noninstitutionalized population (under 19) without health insurance coverage,DP03_0101E,Civilian noninstitutionalized population under 19 years without health insurance coverage
-Household Composition (children under 6),Households with children under 6,B23008_002E,Number of households with children under the age of 6
-Household Composition (children under 6),Living with two parents,B23008_002E,Number of households with children under the age of 7
-Household Composition (children under 6),Living with father,B23008_009E,Number of children living in a household with only the father present
-Household Composition (children under 6),Living with mother,B23008_012E,Number of children living in a household with only the mother present
-Population in Poverty by Age,Under 5,S1701_C02_003E,Population under 5 in poverty
-Population in Poverty by Age,5-17 years,S1701_C02_004E,Population between 5 and 7 years old in poverty
-Population Living With Disabilities,Children under 5 with Disabilities (total),S1810_C02_013E,Number of children under 5 with disabilities
-Population Living With Disabilities,Children under 5 with hearing difficulty,S1810_C02_021E,Number of children under 5 with hearing difficulty
-Population Living With Disabilities,Children under 5 with vision difficulty,S1810_C02_031E,Number of children under 5 with vision difficulty
-Population Living With Disabilities,Children under 18 with cognitive difficulty,S1810_C01_040E,Number of children under 18 with cognitive difficulty
-Population Living With Disabilities,Children under 18 with ambulatory difficulty,S1810_C01_048E,Number of children under 18 with ambulatory difficulty
-Population Living With Disabilities,Children under 18 with self-care difficulty,S1810_C01_056E,Number of children under 5 with self-care difficulty
-Race and Ethnicity,Total Population,B03002_001E,Total Population
-Race and Ethnicity,Not Hispanic or Latino Total,B03002_002E,Not Hispanic or Latino Total
-Race and Ethnicity,Not Hispanic or Latino_White alone,B03002_003E,Not Hispanic or Latino_White alone
-Race and Ethnicity,Not Hispanic or Latino_Black or African American alone,B03002_004E,Not Hispanic or Latino_Black or African American alone
-Race and Ethnicity,Not Hispanic or Latino_American Indian and Alaska Native alone,B03002_005E,Not Hispanic or Latino_American Indian and Alaska Native alone
-Race and Ethnicity,Not Hispanic or Latino_Asian alone,B03002_006E,Not Hispanic or Latino_Asian alone
-Race and Ethnicity,Not Hispanic or Latino_Native Hawaiian and Other Pacific Islander alone,B03002_007E,Not Hispanic or Latino_Native Hawaiian and Other Pacific Islander alone
-Race and Ethnicity,Not Hispanic or Latino_Some other race alone,B03002_008E,Not Hispanic or Latino_Some other race alone
-Race and Ethnicity,Not Hispanic or Latino_Two or more races,B03002_009E,Not Hispanic or Latino_Two or more races
-Race and Ethnicity,Hispanic or Latino Total,B03002_012E,Hispanic or Latino Total
-Race and Ethnicity,Hispanic or Latino_White alone,B03002_013E,Hispanic or Latino_White alone
-Race and Ethnicity,Hispanic or Latino_Black or African American alone,B03002_014E,Hispanic or Latino_Black or African American alone
-Race and Ethnicity,Hispanic or Latino_American Indian and Alaska Native alone,B03002_015E,Hispanic or Latino_American Indian and Alaska Native alone
-Race and Ethnicity,Hispanic or Latino_Asian alone,B03002_016E,Hispanic or Latino_Asian alone
-Race and Ethnicity,Hispanic or Latino_Native Hawaiian and Other Pacific Islander alone,B03002_017E,Hispanic or Latino_Native Hawaiian and Other Pacific Islander alone
-Race and Ethnicity,Hispanic or Latino_Some other race alone,B03002_018E,Hispanic or Latino_Some other race alone
-Race and Ethnicity,Hispanic or Latino_Two or more races,B03002_019E,Hispanic or Latino_Two or more races
-School Enrollment,Enrolled in kindergarten,DP02_0054E,Number of children over 3 enrolled in kindergarten
-School Enrollment,Enrolled in nursery school or preschool,DP02_0053E,Number of children over 3 enrolled in nursery school or preschool
-"SSI, Cash Public Assistance, Food Stamps","Family households receiving SSI, cash public assistance, or food stamps",B09010_003E,"Number of family households receiving SSI, cash public assistance, or food stamps"
-Teen mothers,"Number of women 15 to 19 years old, per 1,000, who had a birth in the past 12 months",DP02_0041E,"Number of women 15 to 19 years old who had a birth in the past 12 months, per 1,000 15-19 year olds in the population"
-Total population,Total Population,B01003_001E,Total population
-Unemployment Rate,Total population civilian labor force unemployment rate,DP03_0009PE,Total population civilian labor force unemployment rate
-"Unemployment, Households with Children under 6",All parents in family in labor force,DP03_0014PE,
+﻿category,name,vars,description,vars_new
+Children in Foster Care,Foster child or other unrelated child under 18 in households,S0901_C01_018E,Number of children under 18 living in households where relationship to householder is foster child or other unrelated child,S0901_C01_018E
+Children Under 6 Population Living With Family,Total children under 6 years,B05009_002E,Total children under 6 years old living with families or subfamilies,B05009_002E
+Children Under 6 Population Living With Family,Living with two parents,B05009_003E,Living with two parents,B05009_003E
+Children Under 6 Population Living With Family,Both parents native,B05009_006E,Both parents native,B05009_006E
+Children Under 6 Population Living With Family,Both parents foreign born,B05009_007E,Both parents foreign born,B05009_007E
+Children Under 6 Population Living With Family,One native and one foreign-born parent,B05009_010E,One native and one foreign-born parent,B05009_010E
+Children Under 6 Population Living With Family,Living with one parent,B05009_013E,Living with one parent,B05009_013E
+Children Under 6 Population Living With Family,Parent is native,B05009_016E,Parent is native,B05009_016E
+Children Under 6 Population Living With Family,Parent is foreign-born,B05009_017E,Parent is foreign-born,B05009_017E
+Educational Attainment,Less than 9th grade,DP02_0059E,Population with less than a 9th grade education,DP02_0060E
+Educational Attainment,"9th - 12th grade, no diploma",DP02_0060E,Population with between a 9th grade and 12th grade education,DP02_0061E
+Educational Attainment,High school graduate,DP02_0061E,Population with a high school diploma or GED,DP02_0062E
+Educational Attainment,"Some college, no degree",DP02_0062E,Population that completed some college,DP02_0063E
+Educational Attainment,Associate's degree,DP02_0063E,Population with an associate's degree,DP02_0064E
+Educational Attainment,Bachelor's degree,DP02_0064E,Population with a bachelor's degree,DP02_0065E
+Educational Attainment,Graduate or professional degree,DP02_0065E,Population with a graduate or professional degree,DP02_0066E
+Health Insurance Coverage,Civilian noninstitutionalized population (under 19),DP03_0100E,Civilian noninstitutionalized population under 19 years,DP03_0100E
+Health Insurance Coverage,Civilian noninstitutionalized population (under 19) without health insurance coverage,DP03_0101E,Civilian noninstitutionalized population under 19 years without health insurance coverage,DP03_0101E
+Population in Poverty by Age,Under 5,S1701_C02_003E,Population under 5 in poverty,S1701_C02_003E
+Population in Poverty by Age,5-17 years,S1701_C02_004E,Population between 5 and 7 years old in poverty,S1701_C02_004E
+Population Living With Disabilities,Children under 5 with Disabilities (total),S1810_C02_013E,Number of children under 5 with disabilities,S1810_C02_013E
+Population Living With Disabilities,Children under 5 with hearing difficulty,S1810_C02_021E,Number of children under 5 with hearing difficulty,S1810_C02_021E
+Population Living With Disabilities,Children under 5 with vision difficulty,S1810_C02_031E,Number of children under 5 with vision difficulty,S1810_C02_031E
+Population Living With Disabilities,Children under 18 with cognitive difficulty,S1810_C01_040E,Number of children under 18 with cognitive difficulty,S1810_C01_040E
+Population Living With Disabilities,Children under 18 with ambulatory difficulty,S1810_C01_048E,Number of children under 18 with ambulatory difficulty,S1810_C01_048E
+Population Living With Disabilities,Children under 18 with self-care difficulty,S1810_C01_056E,Number of children under 5 with self-care difficulty,S1810_C01_056E
+Race and Ethnicity,Total Population,B03002_001E,Total Population,B03002_001E
+Race and Ethnicity,Not Hispanic or Latino Total,B03002_002E,Not Hispanic or Latino Total,B03002_002E
+Race and Ethnicity,Not Hispanic or Latino_White alone,B03002_003E,Not Hispanic or Latino_White alone,B03002_003E
+Race and Ethnicity,Not Hispanic or Latino_Black or African American alone,B03002_004E,Not Hispanic or Latino_Black or African American alone,B03002_004E
+Race and Ethnicity,Not Hispanic or Latino_American Indian and Alaska Native alone,B03002_005E,Not Hispanic or Latino_American Indian and Alaska Native alone,B03002_005E
+Race and Ethnicity,Not Hispanic or Latino_Asian alone,B03002_006E,Not Hispanic or Latino_Asian alone,B03002_006E
+Race and Ethnicity,Not Hispanic or Latino_Native Hawaiian and Other Pacific Islander alone,B03002_007E,Not Hispanic or Latino_Native Hawaiian and Other Pacific Islander alone,B03002_007E
+Race and Ethnicity,Not Hispanic or Latino_Some other race alone,B03002_008E,Not Hispanic or Latino_Some other race alone,B03002_008E
+Race and Ethnicity,Not Hispanic or Latino_Two or more races,B03002_009E,Not Hispanic or Latino_Two or more races,B03002_009E
+Race and Ethnicity,Hispanic or Latino Total,B03002_012E,Hispanic or Latino Total,B03002_012E
+Race and Ethnicity,Hispanic or Latino_White alone,B03002_013E,Hispanic or Latino_White alone,B03002_013E
+Race and Ethnicity,Hispanic or Latino_Black or African American alone,B03002_014E,Hispanic or Latino_Black or African American alone,B03002_014E
+Race and Ethnicity,Hispanic or Latino_American Indian and Alaska Native alone,B03002_015E,Hispanic or Latino_American Indian and Alaska Native alone,B03002_015E
+Race and Ethnicity,Hispanic or Latino_Asian alone,B03002_016E,Hispanic or Latino_Asian alone,B03002_016E
+Race and Ethnicity,Hispanic or Latino_Native Hawaiian and Other Pacific Islander alone,B03002_017E,Hispanic or Latino_Native Hawaiian and Other Pacific Islander alone,B03002_017E
+Race and Ethnicity,Hispanic or Latino_Some other race alone,B03002_018E,Hispanic or Latino_Some other race alone,B03002_018E
+Race and Ethnicity,Hispanic or Latino_Two or more races,B03002_019E,Hispanic or Latino_Two or more races,B03002_019E
+School Enrollment,Enrolled in kindergarten,DP02_0054E,Number of children over 3 enrolled in kindergarten,DP02_0054E
+School Enrollment,Enrolled in nursery school or preschool,DP02_0053E,Number of children over 3 enrolled in nursery school or preschool,DP02_0053E
+"SSI, Cash Public Assistance, Food Stamps","Family households receiving SSI, cash public assistance, or food stamps",B09010_003E,"Number of family households receiving SSI, cash public assistance, or food stamps",B09010_002E
+Teen mothers,"Number of women 15 to 19 years old, per 1,000, who had a birth in the past 12 months",DP02_0041E,"Number of women 15 to 19 years old who had a birth in the past 12 months, per 1,000 15-19 year olds in the population",DP02_0041E
+Total population,Total Population,B01003_001E,Total population,B01003_001E
+Unemployment Rate,Total population civilian labor force unemployment rate,DP03_0009PE,Total population civilian labor force unemployment rate,DP03_0009PE
+"Unemployment, Households with Children under 6","All parents in family in labor force, percent of households with children under 6",DP03_0015PE,Percent of households with children under 6 where all parent(s) in family are employed,DP03_0015PE

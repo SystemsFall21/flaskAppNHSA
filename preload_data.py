@@ -22,6 +22,8 @@ def preload_county_data():
         state_dic[line[0]][1].append(line[1].split(',')[0])
         #add fips and position to key county
         county_dic[line[1].split(',')[0]] = [[line[3]],line[4:]]
+
+    # print(state_dic['Alaska'])
     
     return state_dic, county_dic
 
@@ -36,12 +38,16 @@ def preload_var():
     for line in var_data:
         #check whether catagory in dic:
         if not line[0] in var_info:
-            var_info[line[0]] = [[],[],[]]
+            var_info[line[0]] = [[],[],[],[]]
         #add name
         var_info[line[0]][0].append(line[1])
         #add code
         var_info[line[0]][1].append(line[2])
         #add description
         var_info[line[0]][2].append(line[3])
+        #add another code
+        var_info[line[0]][3].append(line[4])
     
     return var_info,var_data
+
+a,b = preload_county_data()
