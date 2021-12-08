@@ -1,4 +1,10 @@
-Update on 12.7 9:335 pm
+Update on 12.8 1:30 am
+
+Fixed:
+    Tool page on resulte pages will open in new tab now.
+------------------------     ----------------------------
+
+Update on 12.7 9:35 pm
 
 Fixed Typo:
     1. welcome page extra "-" and  missing period on one of the instructions. 
