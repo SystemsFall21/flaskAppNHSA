@@ -1,3 +1,12 @@
+Update on 12.7 9:335 pm
+
+Fixed Typo:
+    1. welcome page extra "-" and  missing period on one of the instructions. 
+    2. Change all result pages to: "download data as a .csv". 
+    3. Correct spelling of "Graph" excel templates , also look into the legend updating glitch. 
+     
+------------------------     ----------------------------
+
 Update on 12.7 4:20 pm
 
 Fixed the bug when searching Educational Attainment. The var code for this category is updated in 2019, and the new code is put in the last columns of census_vars.csv

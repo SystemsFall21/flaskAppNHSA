@@ -146,7 +146,7 @@
 
   <div class="main">
 
-    <p class="download" onclick="download_csv();">Download the Data in csv form</p>
+    <p class="download" onclick="download_csv();">Download data as a .csv file</p>
     <!-- Create table for data retrived -->
     <div class="table">
       <div class="table_title">Search results for {{county}}, {{state}}:</div>
@@ -175,8 +175,8 @@
     <br>
     <div class="adjust">
       <a>You can personalize charts' color here</a><br>
-      <a>Put the RGB code into cells below and click "update"</a><br>
-      <a>Color codes should start with # and has 6 letters or numbers. </a><br>
+      <a>Put the RGB code into cells below and click "Update Color"</a><br>
+      <a>Color codes should start with # and has 6 letters or numbers</a><br>
       <a>e.g. #CCCFFF</a><br>
       <a>Refer to <a href="https://www.rapidtables.com/web/color/RGB_Color.html">this tool page</a> to find color
         codes</a><br><br>
@@ -269,7 +269,7 @@
       responsive: false,
       title: {
         display: true,
-        text: 'Edcuation attainment of population 25 years and older, in past 5 years',
+        text: 'Educational attainment of population 25 years and older, county data',
         fontSize: 20,
       },
       scales: {
@@ -352,7 +352,7 @@
       responsive: false,
       title: {
         display: true,
-        text: 'Change in Edcuation attainment of population 25 years and older, in past 5 years',
+        text: 'Change in educational attainment of population 25 years and older, county data',
         fontSize: 20,
       },
       scales: {
@@ -417,27 +417,27 @@
 
   // change color for first figures
   function change_color1(color1, color2, color3, color4, color5, color6, color7) {
-    myChart1.data.datasets[0].backgroundColor = color1
-    myChart1.data.datasets[1].backgroundColor = color2
-    myChart1.data.datasets[2].backgroundColor = color3
-    myChart1.data.datasets[3].backgroundColor = color4
-    myChart1.data.datasets[4].backgroundColor = color5
-    myChart1.data.datasets[5].backgroundColor = color6
-    myChart1.data.datasets[6].backgroundColor = color7
-    myChart1.update()
-    myChart1.update()
+    myChart1.data.datasets[0].backgroundColor = color1;
+    myChart1.data.datasets[1].backgroundColor = color2;
+    myChart1.data.datasets[2].backgroundColor = color3;
+    myChart1.data.datasets[3].backgroundColor = color4;
+    myChart1.data.datasets[4].backgroundColor = color5;
+    myChart1.data.datasets[5].backgroundColor = color6;
+    myChart1.data.datasets[6].backgroundColor = color7;
+    myChart1.update();
+    myChart1.update();
   }
 
   // Change color for second figures
   function change_color2(color1, color2, color3, color4, color5, color6, color7) {
-    myChart2.data.datasets[0].borderColor = color1
-    myChart2.data.datasets[1].borderColor = color2
-    myChart2.data.datasets[2].borderColor = color3
-    myChart2.data.datasets[3].borderColor = color4
-    myChart2.data.datasets[4].borderColor = color5
-    myChart2.data.datasets[5].borderColor = color6
-    myChart2.data.datasets[6].borderColor = color7
-    myChart2.update()
+    myChart2.data.datasets[0].borderColor = color1;
+    myChart2.data.datasets[1].borderColor = color2;
+    myChart2.data.datasets[2].borderColor = color3;
+    myChart2.data.datasets[3].borderColor = color4;
+    myChart2.data.datasets[4].borderColor = color5;
+    myChart2.data.datasets[5].borderColor = color6;
+    myChart2.data.datasets[6].borderColor = color7;
+    myChart2.update();
   }
 
 </script>
