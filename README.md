@@ -1,3 +1,13 @@
+Update on 12.10 11:40 
+
+Fixed: 
+ If user visit /searchCountyAuth before searching, redirect to home page. 
+ Download catagory list now is sent directly from flask. 
+
+Add file:  
+ folder: ebextensions, for web dployment. 
+------------------------     ----------------------------
+
 Update on 12.8 1:30 am
 
 Fixed:

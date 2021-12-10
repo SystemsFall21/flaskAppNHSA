@@ -1,7 +1,9 @@
-from flask import Flask, render_template, request, send_file
+from flask import Flask, render_template, request, send_file,redirect
 from datetime import date
 from dateutil.relativedelta import relativedelta
 import random
+
+from werkzeug.utils import redirect
 import preload_data
 import cencus
 
@@ -24,34 +26,37 @@ def search():
 
 @app.route('/searchCountyAuth', methods=['GET','POST'])
 def searchCountyAuth():
-  state = request.form.get('state')
-  county = request.form.get('county')
-  category = request.form.get('category')
-  result_list = cencus.get_cencus(state,county,category)
-  if category == "Educational Attainment":
-    return render_template('education.html', result_list = result_list, state = state, county = county)
-  if category == 'Children Under 6 Population Living With Family':
-     return render_template('family.html', result_list = result_list, state = state, county = county)
-  if category == "Children in Foster Care":
-    return render_template('foster.html', result_list = result_list, state = state, county = county)
-  if category == "Health Insurance Coverage":
-    return render_template('health.html', result_list = result_list, state = state, county = county)
-  if category == 'Population Living With Disabilities':
-    return render_template('disability.html', result_list = result_list, state = state, county = county)
-  if category == 'Population in Poverty by Age':
-    return render_template('poverty.html', result_list = result_list, state = state, county = county)
-  if category == 'Race and Ethnicity':
-    return render_template('simple.html', result_list = result_list, state = state, county = county)
-  if category == 'SSI, Cash Public Assistance, Food Stamps':
-    return render_template('ssi.html', result_list = result_list, state = state, county = county)
-  if category == 'School Enrollment':
-    return render_template('school.html', result_list = result_list, state = state, county = county)
-  if category == 'Teen mothers':
-    return render_template('teen.html', result_list = result_list, state = state, county = county)
-  if category == 'Total population':
-    return render_template('population.html', result_list = result_list, state = state, county = county)
-  if category == 'Unemployment Rate':
-    return render_template('unemployment.html', result_list = result_list, state = state, county = county)
+  try:
+    state = request.form.get('state')
+    county = request.form.get('county')
+    category = request.form.get('category')
+    result_list = cencus.get_cencus(state,county,category)
+    if category == "Educational Attainment":
+      return render_template('education.html', result_list = result_list, state = state, county = county)
+    if category == 'Children Under 6 Population Living With Family':
+      return render_template('family.html', result_list = result_list, state = state, county = county)
+    if category == "Children in Foster Care":
+      return render_template('foster.html', result_list = result_list, state = state, county = county)
+    if category == "Health Insurance Coverage":
+      return render_template('health.html', result_list = result_list, state = state, county = county)
+    if category == 'Population Living With Disabilities':
+      return render_template('disability.html', result_list = result_list, state = state, county = county)
+    if category == 'Population in Poverty by Age':
+      return render_template('poverty.html', result_list = result_list, state = state, county = county)
+    if category == 'Race and Ethnicity':
+      return render_template('simple.html', result_list = result_list, state = state, county = county)
+    if category == 'SSI, Cash Public Assistance, Food Stamps':
+      return render_template('ssi.html', result_list = result_list, state = state, county = county)
+    if category == 'School Enrollment':
+      return render_template('school.html', result_list = result_list, state = state, county = county)
+    if category == 'Teen mothers':
+      return render_template('teen.html', result_list = result_list, state = state, county = county)
+    if category == 'Total population':
+      return render_template('population.html', result_list = result_list, state = state, county = county)
+    if category == 'Unemployment Rate':
+      return render_template('unemployment.html', result_list = result_list, state = state, county = county)
+  except:
+    return redirect('/')
 
 @app.route('/categaryList',methods =['GET','POST'])
 def categaryList():
